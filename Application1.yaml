@@ -1,0 +1,48 @@
+components:
+  schemas:
+    Schema5:
+      name: John
+      id: '105'
+    Schema1:
+      name: XYZ
+      id: '101'
+    Schema2:
+      name: ABC
+      id: '102'
+  messages:
+    Event2:
+      payload:
+        $ref: '#/components/schemas/Schema2'
+      description: ''
+      schemaFormat: application/vnd.aai.asyncapi+json;version=2.0.0
+      contentType: application/json
+    Event5:
+      payload:
+        $ref: '#/components/schemas/Schema5'
+      description: ''
+      schemaFormat: application/vnd.aai.asyncapi+json;version=2.0.0
+      contentType: application/json
+    Event1:
+      payload:
+        $ref: '#/components/schemas/Schema1'
+      description: ''
+      schemaFormat: application/vnd.aai.asyncapi+json;version=2.0.0
+      contentType: application/json
+channels:
+  test/supply/orders/4:
+    subscribe:
+      message:
+        $ref: '#/components/messages/Event5'
+  test/supply/orders/1:
+    subscribe:
+      message:
+        $ref: '#/components/messages/Event2'
+  test/supply/orders:
+    subscribe:
+      message:
+        $ref: '#/components/messages/Event1'
+asyncapi: 2.0.0
+info:
+  description: ''
+  title: Application1
+  version: 0.0.1

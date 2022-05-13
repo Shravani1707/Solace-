@@ -1,0 +1,48 @@
+components:
+  schemas:
+    Schema6:
+      name: Julie
+      id: '106'
+    Schema3:
+      name: Alice
+      id: '111'
+    Schema4:
+      name: Jack
+      id: '112'
+  messages:
+    Event6:
+      payload:
+        $ref: '#/components/schemas/Schema6'
+      description: ''
+      schemaFormat: application/vnd.aai.asyncapi+json;version=2.0.0
+      contentType: application/json
+    Event3:
+      payload:
+        $ref: '#/components/schemas/Schema3'
+      description: ''
+      schemaFormat: application/vnd.aai.asyncapi+json;version=2.0.0
+      contentType: application/json
+    Event4:
+      payload:
+        $ref: '#/components/schemas/Schema4'
+      description: ''
+      schemaFormat: application/vnd.aai.asyncapi+json;version=2.0.0
+      contentType: application/json
+channels:
+  test/supply/orders/3:
+    subscribe:
+      message:
+        $ref: '#/components/messages/Event4'
+  test/supply/orders/5:
+    subscribe:
+      message:
+        $ref: '#/components/messages/Event6'
+  test/supply/orders/2:
+    subscribe:
+      message:
+        $ref: '#/components/messages/Event3'
+asyncapi: 2.0.0
+info:
+  description: ''
+  title: Application4
+  version: 0.0.1

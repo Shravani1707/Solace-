@@ -1,0 +1,22 @@
+components:
+  schemas:
+    Schema1:
+      name: XYZ
+      id: '101'
+  messages:
+    Event1:
+      payload:
+        $ref: '#/components/schemas/Schema1'
+      description: ''
+      schemaFormat: application/vnd.aai.asyncapi+json;version=2.0.0
+      contentType: application/json
+channels:
+  test/supply/orders:
+    publish:
+      message:
+        $ref: '#/components/messages/Event1'
+asyncapi: 2.0.0
+info:
+  description: ''
+  title: Application2
+  version: 0.0.1
